@@ -1,0 +1,127 @@
+body { /* zaznaczyłam że marginesy w body mają być 0. Tak się odnoszę do zółtych */
+    margin: 0;
+
+}
+
+a {
+    color: inherit; /* dziedziczenie koloru po rodzicu */
+    text-decoration: none; /* usuwanie podkreślenia w linkach */
+}
+
+.header { /* . oznacza że definiuję klasę. Tak się odnoszę do klas */
+    background-color: seagreen;
+    color: azure;
+    font-family: sans-serif; /* font-family czyli czcionka, bez koloru, rozmiaru itp. Zmienia się tylko daną cechę */
+    font-size: 18px;
+    padding-top: 20px;
+}
+
+@media (min-width: 600px) {
+    /* dla ekranów >= 600px, zastosuj to co poniżej */
+    .header { /* . oznacza że definiuję klasę. Tak się odnoszę do klas */
+        padding-top: 40px;
+    }
+}
+
+.header__logo {
+    display: inline-block; /* ze spana robisz diva czyli z elementu liniowego robię blokowy */
+    width: 350px;
+    height: auto; /* auto - oznacza że wysokość będzie się automatycznie dostosowywać do szerokości */
+    max-width: 40%; /* maksymalna szerokość, 40% rodzica cointainera*/
+    margin-bottom: 30px;
+}
+
+x
+
+@media (min-width: 600px) {
+    .header__logo {
+        margin-bottom: 50px;
+    }
+}
+
+.header__logo-image {
+    display: block; /* ze spana robisz diva czyli z elementu liniowego (tu img) robię blokowy */
+    width: 100%;
+    height: auto; /* auto - oznacza że wysokość będzie się automatycznie dostosowywać do szerokości */
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto; /*wyśrodkowywanie*/
+}
+
+.header__button { /*przycik*/
+    border: 0;
+    background-color: transparent;
+    float: right;
+    z-index: 1; /* decyduje co ma być na górze. Działa tylko jeśli position nie jest statyczna*/
+    position: relative; /* dzięki temu z-index zadziała. Pozycja relatywna - można pozycjonować inne elementy względem tego elementu*/
+}
+
+@media (min-width: 768px) {
+    .header__button {
+        display: none;
+    }
+}
+
+.header__button-line { /*kreski przyciksu*/
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin-bottom: 4px; /* odstęp między kreskami, margines dolny */
+    background-color: black;
+    cursor: pointer;
+}
+
+.header__button-line:last-child { /* ostatnia kreska */
+    margin-bottom: 0; /* odstęp między kreskami, margines dolny */
+}
+
+@media (max-width: 767px) {
+    .header__menu {
+        position: fixed; /* fixed - pozycja względem całej strony. Przesunie się zawsze ze stroną, zawsze widoczny. Position absolut - to samo ale względem rodzica*/
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: deeppink;
+        width: 240px;
+        max-width: 90%;
+        padding: 50px 0 50px;
+        box-sizing: border-box; /* określa jak przeglądarka ma traktować wyskość i szerokość obiektu. Czy ma brać pod uwagę obramowanie, oblew czy obszar treści. Border box- oblew i obramowanie*/
+        line-height: 1.6; /* wysokość interlini */
+        transform: translateX(100%); /* obiekt można przsuwać, zmniejszać, obracać, rozmywać, zniekształać itp. translateX -m a w osi X przesunąć obiek w prawo w stosunku do obiektu */
+        transition: transform 0.5s; /* transition - płynne przejście, animację. Określa które właściwości mają się animować */
+    }
+
+    .header__menu.active { /* dodatkowa klasa dla header__menu. Spowoduje że menu wjedzie na swoje miejsce z prawej na lewo */
+        transform: none; /* wyżej wysuwa się menu na całą swoją szerokość, tutaj mówi mu że ma wrócić na swoje miejsce */
+    }
+
+    .header__link {
+        display: block;
+        transition: background-color 0.3s;
+        padding-left: 30px;
+    }
+
+    .header__link:active {
+        background-color: black;
+    }
+}
+
+@media (min-width: 768px) {
+    .header__menu {
+        display: flex; /* display flex - ustawia wsystkie dzieci, bez żadnych odstępów*/
+    }
+
+    .header__link {
+        background-color: black;
+        padding: 10px 15px;
+        transition: background-color 0.3s;
+        margin-right: 15px;
+    }
+
+    .header__link:hover { /*hover- pseudoselektor który oznacza stan kiedy myszka jest nad obiektem. Active - kiedy naciśniesz i trzymasz przycisk. Visited - kiedy link został odwiedzony. Focus - kiedy zaznacza sie tabem*/
+        background-color: pink;
+    }
+}

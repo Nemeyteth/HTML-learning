@@ -1,0 +1,42 @@
+<!DOCTYPE html> <!-- określa typ dokumentu html 5. Teraz się używa właściwie tylko tego. -->
+<html lang="en"> <!-- określa język strony. Ignorowane przez wszystko i wszystkich.-->
+<head> <!-- meta dane, tytuł strony, opis strony, linki do skryptów i styli. Meta dane to np. przyciski "lubie to", można tu określić jak wygląda wyskakujące okienko. -->
+    <meta charset="UTF-8"> <!-- system kodowania tekstu, uniwersalny, zna wszystkie języki-->
+    <title>Title</title> <!-- jeśli jest, wyświetla się jako pierwsze zdanie w wyszukiwarce google i przy udostępnianiu przez facebooka-->
+    <meta name="description" content="Pierwsze nauki"> <!-- <meta> meta dana -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- ta linijka robi stronę responsywną, content określa szerokość strony równą szerokości urządzenia skala początkowo to 1 -->
+    <link rel="stylesheet" href="style.css"> <!-- podpięcie do styli które utowrzyłam (tam w tabelce pod indexem)-->
+</head>
+<body> <!-- cała reszta strony -->
+<header class="header">
+  <div class="header__container container"> <!-- zawartość w której są elementy. Div - standardowy podział, dzieli na bloki -->
+      <a class="header__logo" href="index.html"> <!-- a - link -->
+          <img class="header__logo-image" src="http://via.placeholder.com/350x150" alt="" width="350" height="150"> <!-- alt - alternatywny tekst jeśli nie wyświetli się zdjęcie, opisuje obrazek w wyszukiwarkach -->
+      </a> <!-- link -->
+      <nav class="header__menu"> <!-- nav - znacznik w którym umieszcza się nawigazję, linki, listy-->
+          <a class="header__link" href="#"> link 1 </a> <!-- alt + zaznaczenie w pionie-->
+          <a class="header__link" href="#"> link 2 </a>
+          <a class="header__link" href="#"> link 3 </a>
+          <a class="header__link" href="#"> link 4 </a>
+          <a class="header__link" href="#"> link 5 </a>
+      </nav>
+      <button class="header__button">
+          <span class="header__button-line"></span> <!-- ctrl+d powiela linię-->
+          <span class="header__button-line"></span>
+          <span class="header__button-line"></span>
+      </button>
+  </div>
+
+</header>
+<main class="main">
+
+
+</main>
+<footer class="footer">
+
+
+</footer>
+
+<script src="scripts.js"></script> <!-- załączanie skryptów -->
+</body>
+</html>
