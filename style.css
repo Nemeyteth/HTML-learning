@@ -16,27 +16,12 @@ a {
     padding-top: 20px;
 }
 
-@media (min-width: 600px) {
-    /* dla ekranów >= 600px, zastosuj to co poniżej */
-    .header { /* . oznacza że definiuję klasę. Tak się odnoszę do klas */
-        padding-top: 40px;
-    }
-}
-
 .header__logo {
     display: inline-block; /* ze spana robisz diva czyli z elementu liniowego robię blokowy */
     width: 350px;
     height: auto; /* auto - oznacza że wysokość będzie się automatycznie dostosowywać do szerokości */
     max-width: 40%; /* maksymalna szerokość, 40% rodzica cointainera*/
     margin-bottom: 30px;
-}
-
-x
-
-@media (min-width: 600px) {
-    .header__logo {
-        margin-bottom: 50px;
-    }
 }
 
 .header__logo-image {
@@ -59,12 +44,6 @@ x
     position: relative; /* dzięki temu z-index zadziała. Pozycja relatywna - można pozycjonować inne elementy względem tego elementu*/
 }
 
-@media (min-width: 768px) {
-    .header__button {
-        display: none;
-    }
-}
-
 .header__button-line { /*kreski przyciksu*/
     display: block;
     width: 30px;
@@ -76,6 +55,59 @@ x
 
 .header__button-line:last-child { /* ostatnia kreska */
     margin-bottom: 0; /* odstęp między kreskami, margines dolny */
+}
+
+.main__content {
+    padding: 40px;
+    background-color: darkslategray;
+    color: bisque;
+}
+.main__title {
+    font-size: 32px;
+    color: azure;
+}
+.main {
+    font-size: 20px;
+    line-height: 1.4;
+}
+.main__sidebar {
+    padding: 40px;
+    background-color: goldenrod;
+    color: black;
+}
+.main__content > *:first-child, .main__sidebar > *:first-child{ /* każdy (*)  pierwszy i ostatni element który jest dzieckiem tego main__content */
+    margin-top: 0;
+}
+.main__text > *:last-child, .main__sidebar > *:last-child{
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .header__button {
+        display: none;
+    }
+    .main__container {
+        display: flex;
+    }
+    .main__content {
+        width: 70%;
+    }
+    .main__sidebar {
+        width: 30%;
+    }
+}
+
+@media (min-width: 600px) {
+    /* dla ekranów >= 600px, zastosuj to co poniżej */
+    .header { /* . oznacza że definiuję klasę. Tak się odnoszę do klas */
+        padding-top: 40px;
+    }
+}
+
+@media (min-width: 600px) {
+    .header__logo {
+        margin-bottom: 50px;
+    }
 }
 
 @media (max-width: 767px) {
